@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: container-registry.oracle.com/database/express:21.3.0-xe
+    environment:
+      - ORACLE_PDB=XEPDB1
+      - ORACLE_PWD=FrancoSQL
+      - ORACLE_CHARACTERSET=AL32UTF8
+    ports:
+      - 1521:1521
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - oracle-backup:/opt/oracle/backup
+
+volumes:
+  oracle-data:
+  oracle-backup:

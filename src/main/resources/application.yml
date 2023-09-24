@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+    username: system
+    password: FrancoSQL
+    driverClassName: oracle.jdbc.driver.OracleDriver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  mvc:
+    format:
+      date: yyyy-MM-dd
